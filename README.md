@@ -7,3 +7,13 @@
 
 ## And this screenshot shows the copy of data in hdfs 
 ![data it hdfs](/static/screenshots/hdfs-data.JPG)
+
+
+The structure of the repo is
+
+- chaos
+- src
+  |- scripts
+  |- utils
+- static
+
