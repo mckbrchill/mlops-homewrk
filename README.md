@@ -1,7 +1,27 @@
-# This repo is for OTUS homework #2-3
+# This repo is for OTUS MLOPs course homework 
 
-## Here is s3 bucket for the home task #2.
+## The structure of the repo is
+
+- notebooks
+
+    - chaos
+
+    - reports
+- src
+    - scripts
+    - utils
+- static
+
+
+
+
+# TASK 2
+## Here is s3 bucket for the home task.
 `s3://otus-task-n2/`
+
+## Here is the path to Jupyter notebook with s3loader code and extracted script.
+`./notebooks/chaos/load_to_s3.ipynb`
+`./src/scripts/s3loader.py`
 
 ![S3 Bucket](/static/screenshots/s3bucket.JPG)
 
@@ -9,11 +29,15 @@
 ![data it hdfs](/static/screenshots/hdfs-data.JPG)
 
 
-The structure of the repo is
+# TASK 3
+## S3 bucket with the prepocessed data
+`s3://otus-task-n3/`
 
-- chaos
-- src
-  |- scripts
-  |- utils
-- static
+## The data preprocessing is described in Jupyter notebook
+`./notebooks/reports/fraud_data_cleaing.ipynb`
+## Here is the path to the data prepocessing / cleaning script made from the prev notebook.
+`./src/scripts/clean_fraud_data.py`
+
+
+
 
