@@ -106,4 +106,5 @@ if __name__ == "__main__":
         df = df.orderBy("tranaction_id")
         
         save_to_parquet(output_bucket, filepath, df)
-        
+    
+    spark.stop()

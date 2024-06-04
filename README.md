@@ -39,5 +39,12 @@
 `./src/scripts/clean_fraud_data.py`
 
 
+# TASK 3
+## 3 successful DAG runs in a row
+![data it hdfs](/static/screenshots/successful_dag.PNG)
 
+## VMs for dataproc
+![data it hdfs](/static/screenshots/dataproc_airflow.JPG)
 
+## DataProc for AirFlow
+![data it hdfs](/static/screenshots/dataproc_airflow2.JPG)
