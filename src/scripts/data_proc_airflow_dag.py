@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 
 from airflow import DAG, settings
 from airflow.models import Connection, Variable
-from airflow.operators.python import PythonOperator
 from airflow.providers.yandex.operators.yandexcloud_dataproc import (
     DataprocCreateClusterOperator, DataprocCreatePysparkJobOperator,
     DataprocDeleteClusterOperator)
@@ -86,15 +85,27 @@ with DAG(
         services=['YARN', 'SPARK', 'HDFS', 'MAPREDUCE'],  
         computenode_count=0,           
         connection_id=ycSA_connection.conn_id,
-        dag=ingest_dag
+        dag=ingest_dag,
     )
 
     # 2 этап: запуск задания PySpark
-    poke_spark_processing = DataprocCreatePysparkJobOperator(
-        task_id='dp-cluster-pyspark-task',
-        main_python_file_uri='s3a://otus-task-n3/scripts/pyspark_script.py',
+    # пропустим для экономии времени
+    # poke_spark_processing = DataprocCreatePysparkJobOperator(
+    #     task_id='dp-cluster-pyspark-task',
+    #     main_python_file_uri='s3a://otus-task-n3/scripts/pyspark_script.py',
+    #     connection_id = ycSA_connection.conn_id,
+    #     dag=ingest_dag
+    # )
+    
+    spark_training = DataprocCreatePysparkJobOperator(
+        task_id='dp-cluster-pyspark-training',
+        main_python_file_uri='s3a://otus-task-n3/scripts/train.py',
         connection_id = ycSA_connection.conn_id,
-        dag=ingest_dag
+        properties = {'spark.submit.deployMode': 'cluster',
+                    'spark.yarn.dist.archives': f's3a://{YC_SOURCE_BUCKET}/scripts/otus-venv.tar.gz#venv1',
+                    'spark.yarn.appMasterEnv.PYSPARK_PYTHON': './venv1/bin/python',
+                    'spark.yarn.appMasterEnv.PYSPARK_DRIVER_PYTHON': './venv1/bin/python'},
+        dag=ingest_dag,
     )
 
     delete_spark_cluster = DataprocDeleteClusterOperator(
@@ -103,4 +114,5 @@ with DAG(
         dag=ingest_dag
     )
     # Формирование DAG из указанных выше этапов
-    create_spark_cluster >> poke_spark_processing >> delete_spark_cluster
+    # create_spark_cluster >> poke_spark_processing >> spark_training >> delete_spark_cluster
+    create_spark_cluster >> spark_training >> delete_spark_cluster

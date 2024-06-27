@@ -48,3 +48,20 @@
 
 ## DataProc for AirFlow
 ![data it hdfs](/static/screenshots/dataproc_airflow2.JPG)
+
+
+# TASK 5
+## 3 successful DAG runs in a row with model training. Although I skipped data preprocessing to save some time.
+![data it hdfs](/static/screenshots/airflow-training.JPG)
+
+## All runs in MLFLOW - last several ones arе successful 
+![data it hdfs](/static/screenshots/mlflow-training.JPG)
+
+## Metrics in MLFlow for DAG task
+![data it hdfs](/static/screenshots/mlflow-training1.JPG)
+## Metrics in MLFlow for manual training script execution 
+![data it hdfs](/static/screenshots/mlflow-training2.JPG)
+## Model artifacts in mlflow
+![data it hdfs](/static/screenshots/mlflow-training3.JPG)
+## Model artifacts in S3
+![data it hdfs](/static/screenshots/mlflow-training-artifacts.JPG)
