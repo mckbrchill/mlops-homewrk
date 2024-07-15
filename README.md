@@ -41,27 +41,39 @@
 
 # TASK 4
 ## 3 successful DAG runs in a row
-![data it hdfs](/static/screenshots/successful_dag.PNG)
+![successful_dag](/static/screenshots/successful_dag.PNG)
 
 ## VMs for dataproc
-![data it hdfs](/static/screenshots/dataproc_airflow.JPG)
+![dataproc_airflow](/static/screenshots/dataproc_airflow.JPG)
 
 ## DataProc for AirFlow
-![data it hdfs](/static/screenshots/dataproc_airflow2.JPG)
+![dataproc_airflow2](/static/screenshots/dataproc_airflow2.JPG)
 
 
 # TASK 5
 ## 3 successful DAG runs in a row with model training. Although I skipped data preprocessing to save some time.
-![data it hdfs](/static/screenshots/airflow-training.JPG)
+![airflow-training](/static/screenshots/airflow-training.JPG)
 
 ## All runs in MLFLOW - last several ones arе successful 
-![data it hdfs](/static/screenshots/mlflow-training.JPG)
+![All runs in MLFLOW](/static/screenshots/mlflow-training.JPG)
 
 ## Metrics in MLFlow for DAG task
-![data it hdfs](/static/screenshots/mlflow-training1.JPG)
+![metrics for dag](/static/screenshots/mlflow-training1.JPG)
 ## Metrics in MLFlow for manual training script execution 
-![data it hdfs](/static/screenshots/mlflow-training2.JPG)
+![metrcis for manual](/static/screenshots/mlflow-training2.JPG)
 ## Model artifacts in mlflow
-![data it hdfs](/static/screenshots/mlflow-training3.JPG)
+![model artifacts mlflow](/static/screenshots/mlflow-training3.JPG)
 ## Model artifacts in S3
-![data it hdfs](/static/screenshots/mlflow-training-artifacts.JPG)
+![model artifacts s3](/static/screenshots/mlflow-training-artifacts.JPG)
+
+# TASK 6
+
+## I've implemented AB-testing through statistical difference measure for all the metrics for the new trained model (for educational purpose to save some time the number of bootstap samples is low). 
+
+## Metrics distributions saved in MLFlow (mean, std, confidence interval, p-value, z-score)
+![airflow-training](/static/screenshots/hw6-run1-metrics.JPG) ![All runs in MLFLOW](/static/screenshots/hw6-run2-metrics.JPG)
+
+## AB test result for runs 0 - 1 / MLFLow artifacts
+![metrics for dag](/static/screenshots/hw6-run1-ab.JPG)
+## AB test result for runs 1 - 2 / MLFLow artifacts
+![metrics for dag](/static/screenshots/hw6-run2-ab.JPG)
