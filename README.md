@@ -80,10 +80,10 @@
 
 # TASK 7
 
-## I've created Kafka Cluster with user and topic, implemented producer and consumer alongside with model inference.
-## To test moderl performance for 10 minutes 10k messages were generated and 4356 trascasrions were processed. So in this setup the model can process ~7 msgs per second.
-## The same DAG file as for training were refactored for running inference.py on shedule and storing inference artifacts to S3
-## Model for inference is loaded from S3.
+I've created Kafka Cluster with user and topic, implemented producer and consumer alongside with model inference.
+To test moderl performance for 10 minutes 10k messages were generated and 4356 trascasrions were processed. So in this setup the model can process ~7 msgs per second.
+The same DAG file as for training were refactored for running inference.py on shedule and storing inference artifacts to S3
+Model for inference is loaded from S3.
 
 ## Kafka cluster
 ![kafka](/static/screenshots/hw7-kafka-cluster.JPG)
