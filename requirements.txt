@@ -9,3 +9,6 @@ lz4==4.3.3
 pydantic==2.8.2
 pydantic-settings==2.3.4
 pyarrow==17.0.0
+fastapi==0.112.0
+uvicorn==0.30.3
+pyspark==3.0.2

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "inference-service"
+version = "0.1.0"
+description = "Otus MLops course home task service"
+authors = ["Aleksei Pekhterev <apekhterev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.14"
+fastapi = "0.112.0"
+uvicorn = "^0.30.3"
+pyspark = "3.5.1"
+numpy = "1.24.2"
+pandas = "^2.0.0"
+pydantic = "2.8.2"
+pydantic-settings = "2.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

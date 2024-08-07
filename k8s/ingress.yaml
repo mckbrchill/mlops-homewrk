@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: predictor-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: predictor.ai
+      http:
+        paths:
+          - pathType: Exact
+            path: /api/ready
+            backend:
+              service:
+                name: predictor-svc
+                port:
+                  number: 8000
+          - pathType: Exact
+            path: /api/health
+            backend:
+              service:
+                name: predictor-svc
+                port:
+                  number: 8000
+          - pathType: Exact
+            path: /api/predict
+            backend:
+              service:
+                name: predictor-svc
+                port:
+                  number: 8000

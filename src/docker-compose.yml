@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  inference-service:
+    image: otus-inference-service:0.1.0
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8000:8000

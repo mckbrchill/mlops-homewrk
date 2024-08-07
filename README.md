@@ -96,3 +96,33 @@ Model for inference is loaded from S3.
 ## Inference + consumer
 ![consumer + inference](/static/screenshots/hw7-consumer-inference.JPG)
 
+
+# TASK 8
+
+I've created Fast API service for the model inference, dockerfile and docker compose for it.
+Docker image was build and sucessfully pushed at docker hub.
+K8s clusted was set up locally with kind and lens.
+
+Cluster has 1 master and 3 worker nodes, nginx ingress for proxying service outside with load balancing.
+The service in k8s responds to the incoming requests correctly.
+
+## Image on DOcker hub
+![hub](/static/screenshots/hw8/docker_hub_image.JPG)
+
+# Service tested locally
+![test](/static/screenshots/hw8/service_test.JPG)
+
+# K8s Cluster
+![k8s](/static/screenshots/hw8/k8s_cluster.JPG)
+
+![k8s_pods](/static/screenshots/hw8/k8s_pods.JPG)
+
+![k8s_deploy](/static/screenshots/hw8/k8s_deployment_nginx.JPG)
+
+![k8s_ingress](/static/screenshots/hw8/k8s_ingresses_network.JPG)
+
+# Service tested inside the cluster
+![test_k8s](/static/screenshots/hw8/k8s_service_inside.JPG)
+
+# Service tested outside of the cluster using domain url
+![test_outside](/static/screenshots/hw8/service_test_outside.JPG)
